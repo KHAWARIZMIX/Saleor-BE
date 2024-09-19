@@ -3,6 +3,7 @@ version: "3.4"
 services:
   api:
     image: ghcr.io/saleor/saleor:3.20
+    command: python3 manage.py populatedb --createsuperuser
     ports:
       - 8001:8001
     restart: unless-stopped
@@ -28,9 +29,6 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_USER=${POSTGRES_USER}
       - REDIS_URL=${REDIS_URL}
-
-    command: 
-      python3 manage.py populatedb --createsuperuser
 
   dashboard:
     image: ghcr.io/saleor/saleor-dashboard:latest
