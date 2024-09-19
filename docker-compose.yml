@@ -29,6 +29,9 @@ services:
       - POSTGRES_USER=${POSTGRES_USER}
       - REDIS_URL=${REDIS_URL}
 
+    command: 
+      python3 manage.py populatedb --createsuperuser
+
   dashboard:
     image: ghcr.io/saleor/saleor-dashboard:latest
     ports:
