@@ -67,7 +67,7 @@ services:
       - saleor-backend-tier
     env_file:
       - common.env
-      - backend.env
+      # - backend.env
     depends_on:
       - redis
       - mailpit
