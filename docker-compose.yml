@@ -3,9 +3,8 @@ version: "3.4"
 services:
   api:
     image: ghcr.io/saleor/saleor:3.20
-    command: python3 manage.py populatedb --createsuperuser
     ports:
-      - 8000:8000
+      - 5000:5000
     restart: unless-stopped
     networks:
       - saleor-backend-tier
